@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getJson } from '../../auth'
+import { apiUrl, getJson } from '../../auth'
 
 const files = {
   monthly: 'monthly-assessment-summary.csv',
@@ -18,7 +18,7 @@ export default function AdminReports({ token }) {
   }, [token])
 
   async function download(card) {
-    const response = await fetch(`/api/admin/reports/${card.id}`, {
+    const response = await fetch(apiUrl(`/api/admin/reports/${card.id}`), {
       headers: { Authorization: `Bearer ${token}` },
     })
     if (!response.ok) {

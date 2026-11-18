@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,9 +10,11 @@ from app.patient.routes import router as patient_router
 from app.register.routes import router as register_router
 
 app = FastAPI(title="Athma Hospital")
+origins = ["http://localhost:5173", "http://127.0.0.1:5173"]
+origins.extend(item.strip() for item in os.getenv("CORS_ORIGINS", "").split(",") if item.strip())
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
