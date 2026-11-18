@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.lg {
+  --navy: #1e3a6d;
+  --navy-2: #27487f;
+  --orange: #e8571f;
+  --orange-dark: #d24a14;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --field: #f8fafc;
+  --ink: #1e293b;
+  --orange-tint: #fde4d8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: linear-gradient(160deg, #e3ebf7 0%, #f7f9fc 60%, #fdf1ea 100%);
+  font-family: Inter, system-ui, 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.lg h1,
+.lg h2,
+.lg p {
+  margin: 0;
+}
+
+.lg .auth-card {
+  width: 100%;
+  max-width: 1040px;
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 80px rgba(30, 58, 109, 0.16),
+    0 2px 6px rgba(30, 58, 109, 0.06);
+}
+
+.lg .auth-side {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.lg .auth-side::before,
+.lg .auth-side::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.lg .auth-side::before {
+  width: 380px;
+  height: 380px;
+  right: -190px;
+  top: -150px;
+  background: var(--navy-2);
+}
+
+.lg .auth-side::after {
+  width: 280px;
+  height: 280px;
+  left: -110px;
+  bottom: -110px;
+  background: var(--orange);
+  opacity: 0.16;
+}
+
+.lg .auth-side > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lg .auth-logo {
+  align-self: flex-start;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+.lg .auth-logo img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+.lg .auth-side h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.lg .auth-side p {
+  color: #c7d4ea;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.lg .auth-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.lg .auth-note .badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--orange);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.lg .auth-note strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lg .auth-note span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #c7d4ea;
+  line-height: 1.5;
+}
+
+.lg .auth-main {
+  padding: 36px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.lg .auth-top {
+  text-align: right;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.lg .auth-top a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lg .auth-top a:hover {
+  text-decoration: underline;
+}
+
+.lg h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.lg .lead {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+.lg .grid {
+  display: grid;
+  gap: 16px;
+}
+
+.lg .field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.lg .field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--field);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: inherit;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+.lg .field input::placeholder {
+  color: #94a3b8;
+}
+
+.lg .field input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 4px var(--orange-tint);
+}
+
+.lg .input-wrap {
+  position: relative;
+}
+
+.lg .input-wrap .icon-left {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+  display: flex;
+}
+
+.lg .field .input-wrap input {
+  padding-left: 44px;
+}
+
+.lg .field .input-wrap.pw input {
+  padding-right: 48px;
+}
+
+.lg .eye {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.lg .eye:hover {
+  color: var(--navy);
+  background: #eef2f7;
+}
+
+.lg .btn {
+  width: 100%;
+  height: 52px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(232, 87, 31, 0.28);
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+
+.lg .btn:hover {
+  background: var(--orange-dark);
+}
+
+.lg .btn:active {
+  transform: scale(0.99);
+}
+
+.lg .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.lg .btn-ghost {
+  height: 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lg .btn-ghost:hover {
+  background: #f1f5f9;
+}
+
+.lg .or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.lg .or::before,
+.lg .or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.lg .alert {
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.lg .alert.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 860px) {
+  .lg .auth-card {
+    grid-template-columns: 1fr;
+    border-radius: 22px;
+  }
+
+  .lg .auth-side {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .lg .auth-side h2 {
+    font-size: 22px;
+  }
+
+  .lg .auth-note {
+    display: none;
+  }
+
+  .lg .auth-main {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,5 @@
+backend/.env
+backend/plugins/
+backend/_try_db.py
+frontend/node_modules/
+frontend/dist/
